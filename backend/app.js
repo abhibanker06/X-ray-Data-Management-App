@@ -6,7 +6,9 @@ const cors = require("cors")
 const path = require("path")
 
 
-app.use(cors());
+app.use(cors({
+  origin: "https://x-ray-data-management-app.vercel.app"
+}))
 
 const connectDB = require("./config/db")
 require("dotenv").config()
