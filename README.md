@@ -1,70 +1,87 @@
-X-ray Dataset Manager - Setup Guide
-=====================================
+# 🫁 X-ray Dataset Manager
 
+A full-stack web application to upload, organize, and manage X-ray image datasets by category.
 
-REQUIREMENTS
-------------
-- Node.js 
+---
 
-- MongoDB connection string
-  (will be provided to you separately)
+## ✨ Features
 
+- 📤 Upload X-ray images and assign them to categories
+- 🖼️ View all images in a clean gallery layout
+- 🔍 Preview images in a modal
+- 🗑️ Delete single or multiple images at once
+- 📁 Manage categories with live image counts
+- 📱 Fully responsive — works on desktop and mobile
 
-STEP 1 - Extract the ZIP
--------------------------
-Extract the ZIP file and open the folder in your terminal or VS Code.
+---
 
+## 🛠️ Tech Stack
 
-STEP 2 - Setup Backend
------------------------
-Open a terminal and run these commands one by one:
+- **Frontend** — React, Vite, Tailwind CSS
+- **Backend** — Node.js, Express.js
+- **Database** — MongoDB (Mongoose)
+
+---
+
+## ✅ Requirements
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- MongoDB connection string (local or Atlas)
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Extract the ZIP
+Extract the project folder and open it in your terminal or VS Code.
+
+### 2. ⚙️ Setup Backend
 
     cd backend
     npm install
 
-Then create a file named ".env" inside the backend folder.
-Write this inside it:
+Create a `.env` file inside the `backend` folder:
 
     PORT=5000
     MONGO_URI=paste_your_connection_string_here
 
-Replace "paste_your_connection_string_here" with the MongoDB string provided to you.
-
-Then start the backend by running:
+Start the backend:
 
     npm run dev
 
-If successful you will see:  Server running on port 5000
+You should see: `Server running on port 5000` ✅
 
+### 3. 🎨 Setup Frontend
 
-STEP 3 - Setup Frontend
-------------------------
-Open a SECOND terminal (keep the first one running) and run:
+Open a **second terminal** and run:
 
     cd client
     npm install
 
-Then create a file named ".env" inside the client folder.
-Write this inside it:
+Create a `.env` file inside the `client` folder:
 
     VITE_API_URL=http://localhost:5000
 
-Then start the frontend by running:
+Start the frontend:
 
     npm run dev
 
-If successful you will see:  Local: http://localhost:5173
+You should see: `Local: http://localhost:5173` ✅
 
+---
 
-STEP 4 - Open the App
-----------------------
+## 🌐 Running the App
+
+Both terminals must be running at the same time.
+
 Open your browser and go to:
 
     http://localhost:5173
 
+---
 
-IMPORTANT
----------
-- Both terminals must be running at the same time
+## 📝 Notes
+
+- The `uploads` folder is created automatically on first run
 - Do not close either terminal while using the app
-- The uploads folder is created automatically, no need to create it manually
+- Do not include `node_modules` when sharing or submitting the project
