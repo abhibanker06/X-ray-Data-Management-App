@@ -6,6 +6,10 @@ const connectDB = require("./config/db");
 
 const app = express();
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' })
+})
+
 app.use(cors({
   origin: ['https://x-ray-data-management-app.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
