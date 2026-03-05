@@ -21,7 +21,7 @@ const Navbar = () => {
               X-Ray Dataset Manager
             </h1>
             <h4 className='text-[12px] md:text-[15px] text-gray-500 dark:text-gray-400'>
-              ai4see Medical Imaging
+              XRayVision Medical Imaging
             </h4>
           </div>
         </Link>
