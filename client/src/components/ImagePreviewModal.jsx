@@ -4,7 +4,7 @@ import { RiCloseLine } from 'react-icons/ri'
 const ImagePreviewModal = ({ image, onClose }) => {
   if (!image) return null
 
-  const imageUrl = `http://localhost:5000/uploads/${image.image}`
+  const imageUrl = `${import.meta.env.VITE_API_URL}/uploads/${image}`
 
   return (
     <div
