@@ -1,13 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-require("dotenv").config(); // ← must be first!
+require("dotenv").config();
 const connectDB = require("./config/db");
 
 const app = express();
 
 app.use(cors({
-  origin: 'https://x-ray-data-management-app.vercel.app',
+  origin: ['https://x-ray-data-management-app.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
