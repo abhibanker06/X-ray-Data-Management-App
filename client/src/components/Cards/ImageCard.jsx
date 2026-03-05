@@ -3,7 +3,7 @@ import { RiDeleteBinLine, RiEyeLine } from "react-icons/ri"
 
 const ImageCard = ({ image, category, name, onDelete, id, onView, onSelect, isSelected }) => {
 
- const imageUrl = `${import.meta.env.VITE_API_URL}/uploads/${image.image}`
+ const imageUrl = `${import.meta.env.VITE_API_URL}/uploads/${image}`
 
   return (
     <div
