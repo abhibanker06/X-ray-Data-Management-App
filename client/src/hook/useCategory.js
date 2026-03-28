@@ -12,9 +12,10 @@ const useCategories = () => {
   const fetchCategories = async () => {
     try {
       const data = await getCategories()
-      setCategories(data)
+      setCategories(Array.isArray(data) ? data : [])
     } catch (err) {
       console.log(err.message)
+      setCategories([])
     }
   }
 

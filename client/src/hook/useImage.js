@@ -16,9 +16,10 @@ const useImages = () => {
   const fetchImages = async () => {
     try {
       const data = await fetchImagesApi()
-      setImages(data)
+      setImages(Array.isArray(data) ? data : [])
     } catch (err) {
       console.log(err.message)
+      setImages([])
     }
   }
 

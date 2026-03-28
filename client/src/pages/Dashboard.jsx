@@ -12,18 +12,21 @@ const Dashboard = () => {
   const { images } = useImages()
   const { categories } = useCategories()
 
-  const totalImages = images.length || 0
-  const totalCategories = categories.length || 0
+  const imagesArr = Array.isArray(images) ? images : []
+  const categoriesArr = Array.isArray(categories) ? categories : []
 
-  const recentCount = images.filter((img) => {
+  const totalImages = imagesArr.length || 0
+  const totalCategories = categoriesArr.length || 0
+
+  const recentCount = imagesArr.filter((img) => {
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
     return new Date(img.createdAt) > sevenDaysAgo
   }).length || 0
 
 
   const avgPerCategory = totalCategories > 0 ? (totalImages / totalCategories).toFixed(1) : 0
-  const chartData = categories.map((cat) => ({ name: cat.name, count: cat.imageCount }))
-  const recentImages = [...images].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0,5 )
+  const chartData = categoriesArr.map((cat) => ({ name: cat.name, count: cat.imageCount }))
+  const recentImages = [...imagesArr].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5)
   const colors = ['#14b8a6', '#3b82f6', '#ec4899', '#eab308', '#8b5cf6', '#22c55e']
 
   return (
